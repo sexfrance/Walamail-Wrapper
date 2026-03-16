@@ -11,7 +11,8 @@ class WalaMailClient:
         self.base_url = base_url.rstrip('/')
         self.headers = {
             "Authorization": f"Bearer {api_token}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "User-Agent": f"WalaMail-Python-Client/1.0.0"
         }
 
     def _request(self, method: str, endpoint: str, data: Optional[Dict] = None, params: Optional[Dict] = None) -> Dict[str, Any]:
